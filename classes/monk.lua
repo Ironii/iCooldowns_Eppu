@@ -432,7 +432,7 @@ function iCD:MONK(specID)
 	elseif specID == 270 then --Mistviewer
 			t.power = {
 				pos = {
-					x = -990,
+					x = -30,
 					y = -8,
 				},
 				func = function()
@@ -453,7 +453,8 @@ function iCD:MONK(specID)
 				customRangeSpell = 'Tiger Palm',
 				stack = true,
 				stackFunc = function()
-					local name, _, icon, count, debuffType, duration, expirationTime, _, _, _, spellID = UnitBuff('player', 'Teachings of the Monastery', nil, 'player')
+					--local name, _, icon, count, debuffType, duration, expirationTime, _, _, _, spellID = UnitBuff('player', 'Teachings of the Monastery', nil, 'player')
+					local count, duration, expirationTime, value1, value2, value3 = iCD.UnitBuff('player', 'Teachings of the Monastery', nil, 'player')
 					if count and count > 0 then
 						return count
 					else
@@ -464,15 +465,8 @@ function iCD:MONK(specID)
 			[196725] =  { -- Refreshing Jade Wind
 				order = 10,
 				showFunc = function()
-					return select(4, GetTalentInfo(6, 1, 1))
+					return select(4, GetTalentInfo(6, 2, 1))
 				end,
-			},
-			[124081] =  { -- Zen Pulse
-				order = 12,
-				showFunc = function()
-					return select(4, GetTalentInfo(1, 2, 1))
-				end,
-				range = true,
 			},
 			[123986] =  { -- Chi Burst
 				order = 12,
@@ -548,10 +542,6 @@ function iCD:MONK(specID)
 			},
 		}
 		t.row3 = {
-			[205406] = { -- Sheilun's Gift
-				order = 3,
-				customText = function() return GetSpellCount(205406) end,
-			},
 			[115151] = { -- Renewing Mist
 				order = 4,
 			},

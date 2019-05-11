@@ -1,6 +1,6 @@
 ## Interface: 80100
-## Title: iCooldowns
-## Notes: iCooldowns
+## Title: iCooldowns Eppu edition
+## Notes: iCooldowns Eppu edition
 ## Author: Ironi
 ## Version: 1.0
 ## DefaultState: enabled
